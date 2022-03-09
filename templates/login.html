@@ -1,0 +1,131 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load widget_tweaks %}
+
+{% block title %} Login/SignUp {% endblock title %}
+{% block headers %}
+  <link rel="stylesheet" href="{% static 'css/styleform.css' %}">
+{% endblock headers %}
+{% block content %}
+{% include 'breadcrumb.html' with menu='About Us' title='About Finseva' %}
+  <!--Start form-->
+  <section class="about-agency pad-tb block-1">
+
+     <div class="container1">
+      <input type="checkbox" id="flip">
+      <div class="cover">
+        <div class="front">
+          <div class="text">
+            <span class="text-1"> Give your business a boost with best in class B2B service</span>
+            <span class="text-2">Let's get connected</span>
+          </div>
+        </div>
+        <div class="back">
+          <div class="text">
+            <span class="text-1">Complete miles of journey <br> with one step</span>
+            <span class="text-2">Let's get started</span>
+          </div>
+        </div>
+      </div>
+      <div class="forms">
+          <div class="form-content">
+            <div class="login-form">
+              <div class="title">Login</div>
+            <form action="{% url 'auth_page' %}" method="POST"> {% csrf_token %}
+              <input type="hidden" name="type" value="Login">
+              <div class="input-boxes">
+                <div class="input-box">
+                  <i class="fas fa-envelope"></i>
+                  {% render_field login_form.login_email placeholder="Enter your email" type="email" %} 
+                </div>
+                {% render_field login_form.login_email.errors %}
+                <div class="input-box">
+                  <i class="fas fa-lock"></i>
+                  {% render_field login_form.login_password placeholder="Enter your password" type="password" %}
+                </div>
+                {% render_field login_form.login_password.errors %}
+                   {% render_field login_form.login_captcha %}
+                {% render_field login_form.login_captcha.errors %}
+                <div class="text"><a href="{% url 'password_reset' %}">Forgot password?</a></div>
+                <div class="button input-box">
+                  <input type="submit" value="Sumbit">
+                </div>
+
+                <div class="text sign-up-text">Don't have an account? <label for="flip">Sigup now</label></div>
+
+              </div>
+          </form>
+        </div>
+
+          <div class="signup-form">
+            <div class="title">Signup</div>
+          <form action="{% url 'auth_page' %}" method="post"> {% csrf_token %}
+              <input type="hidden" name="type" value="signup">
+              <div class="input-boxes">
+                <div class="input-box">
+                  <i class="fas fa-user"></i>
+                  {% render_field register_form.first_name placeholder="First Name" type="text" %}
+                  <!-- <small>*Make sure your name is as per your PAN card</small> -->
+                </div>
+                {% render_field register_form.first_name.errors %}
+                <div class="input-box">
+                  <i class="fas fa-user"></i>
+                  {% render_field register_form.business_name placeholder="Business Name / Shop Name" type="text" %}
+                </div>
+                {% render_field register_form.business_name.errors %}
+                <div class="input-box">
+                  <i class="fas fa-user"></i>
+                  {% render_field register_form.mobile_number placeholder="Mobile number" type="text" %}
+                </div>
+                {% render_field register_form.mobile_number.errors %}
+                <div class="input-box">
+                  <i class="fas fa-user"></i>
+                  {% render_field register_form.shop_address placeholder="Shop Address" type="text" %}
+                </div>
+                {% render_field register_form.shop_address.errors %}
+
+                <div class="input-box">
+                  <i class="fas fa-lock"></i>
+                  {% render_field register_form.pin_code placeholder="PIN Code" type="password" %}
+                </div>
+                {% render_field register_form.pin_code.errors %}
+                <div class="input-box">
+                  <i class="fas fa-lock"></i>
+                  {% render_field register_form.district placeholder="District" type="text" %}
+                </div>
+                {% render_field register_form.district.errors %}
+                <div class="input-box">
+                  <p>State</p>
+                  {% render_field register_form.state  class="selectstyle" %}
+                </div>
+                {% render_field register_form.state.errors %}
+
+                <div class="input-box">
+                  <i class="fas fa-envelope"></i>
+                  {% render_field register_form.register_email placeholder="Enter your email" type="email" %}
+                </div>
+                {% render_field register_form.register_email.errors %}
+                <div class="input-box">
+                  <i class="fas fa-lock"></i>
+                  {% render_field register_form.register_password placeholder="Enter your password" type="password" %}
+                </div>
+                {% render_field register_form.register_password.errors %}
+                 <div class="d-flex justify-content-center mb-0">
+                   {% render_field register_form.captcha %}
+                </div>
+                {% render_field register_form.captcha.errors %}
+                <div class="button input-box mt-2">
+                  <input type="submit" value="Sumbit">
+                </div>
+                <div class="text sign-up-text">Already have an account? <label for="flip">Login now</label></div>
+              </div>
+        </form>
+      </div>
+      </div>
+      </div>
+    </div>
+  </section>
+  <!--End form-->
+
+  <!--End About-->
+{% endblock content %}

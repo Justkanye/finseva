@@ -1,0 +1,26 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+	<meta charset="utf-8"/>
+	<!-- Unique page title -->
+	<title>Finseva | Reset Password </title>
+	<meta name="description" content="Welcome to Finseva.in">
+	<meta name="keywords" content="Finseva">
+	<meta name="author" content="Anmol Arora">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="theme-color" content="#fff">
+	<!--website-favicon-->
+	<link href="{% static 'images/favicon.png' %}" rel="icon">
+	<!--plugin-css-->
+	<link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+ </head>
+
+  <body class="bg-info">
+	<div class="container mt-1">
+		<div class="alert alert-info">An email verification failed</div>
+		<a href="{% url 'home_page' %}" class="btn btn-primary">Home</a>
+	</div>
+</body>
+</html>

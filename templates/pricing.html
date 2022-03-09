@@ -1,0 +1,85 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %} Pricing {% endblock title %}
+
+{% block content %}
+{% include 'breadcrumb.html' with menu='Pricing' title='Pricing' %}
+  <!--Start Pricing-->
+<section class="block-a1 pad-tb">
+<div class="container">
+<div class="row justify-content-center">
+<div class="col-lg-8">
+<div class="common-heading ptag">
+  <h2>Pricing Table</h2>
+  <p class="mb0"></p>
+</div>
+</div>
+</div>
+<div class="row justify-content-center">
+<div class="col-lg-4 col-md-6">
+<div class="pricing-table mt60">
+  <div class="inner-table">
+    <img src="{% static 'images/icons/plan-1.svg' %}" alt="Personal"/>
+    <span class="title">Gst Registration </span>
+    <br/><br>
+    <h2><sup>Rs.</sup>250</h2>
+  </div>
+  <a href="{% url 'auth_page' %}" class="btn-main bg-btn lnk">Get Started <i class="fas fa-chevron-right fa-icon"></i> <span class="circle"></span></a>
+</div>
+</div>
+<div class="col-lg-4 col-md-6">
+<div class="pricing-table best-plan mt60 bg-gradient4">
+  <div class="inner-table">
+    <img src="{% static 'images/icons/plan-2.svg' %}" alt="Advance"/>
+    <span class="title">Income Tax Return </span>
+    <br/><br/>
+    <h2><sup>Rs.</sup>150</h2>
+  </div>
+  <a href="{% url 'auth_page' %}" class="btn-main bg-btn3 lnk">Get Started <i class="fas fa-chevron-right fa-icon"></i> <span class="circle"></span></a>
+</div>
+</div>
+<div class="col-lg-4 col-md-6">
+<div class="pricing-table mt60">
+  <div class="inner-table">
+    <img src="{% static 'images/icons/plan-3.svg' %}" alt="Ultimate"/>
+    <span class="title">Passport Application</span>
+    <br/><br/>
+    <h2><sup>Rs.</sup> 150</h2>
+
+  </div>
+  <a href="{% url 'auth_page' %}" class="btn-main bg-btn lnk">Get Started <i class="fas fa-chevron-right fa-icon"></i> <span class="circle"></span></a>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!--End Pricing-->
+     <!--Start About-->
+
+      <section class="about-sec-rpbx pad-tb">
+         <div class="container">
+            <div class="row justify-content-center text-center">
+               <div class="col-lg-10">
+                  <div class="common-heading">
+                     <h3 class="mb30"><span class="text-second">Detailed Pricing</span></h3><BR/>
+<div style=" text-align: justify !important;">
+<b>➢ Income Tax Return :</b> Rs. 150 <br/><br/>
+<b>➢ Gst Registration  : </b>Rs. 250<br/><br/>
+<b>➢ Reissue Passport Application  :  </b>Rs. 150<br/><br/>
+<b>➢ New Passport Application  :  </b> Rs. 150 <br/><br/>
+<b>➢ Newspaper Name Change Publication:  </b> Rs.350 for 2 news paper (English and local) (Including Courier Charges) <br/><br/>
+<b>➢ Newspaper Public Notice :  </b> According to Number of Words <br/><br/>
+<b>➢ Newspaper Marriage Classifieds:  </b> According to Number of Words<br/><br/>
+<b>➢ MSME Certificate :  </b> Rs. 250<br/><br/>
+<b>➢ PF Refund :   </b> Rs. 200 <br/><br/>
+<b>➢ 3rd Party Motor Insurance :    </b> 30 % Commission <br/><br/>
+
+	<a style="text-align: center;" href="{% url 'services_page' %}" class="btn-main bg-btn3 lnk wow fadeInUp" data-wow-delay=".6s">For Detailed Motor Insurance 3rd Party Rates, Click Here<i class="fas fa-chevron-right fa-icon"></i><span class="circle"></span></a>
+</div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </section>
+{% endblock content %}

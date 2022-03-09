@@ -1,0 +1,8 @@
+{% autoescape off %}
+
+	Hello {{user.first_name}}, Thank you for choosing Finseva.
+	Please use the link below to verify your account.
+
+	http://{{domain}}{% url 'verify_email' uidb64=uid token=token %}
+
+{% endautoescape %}

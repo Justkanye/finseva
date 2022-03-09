@@ -1,0 +1,20 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+whitenoise = "*"
+six = "*"
+django-environ = "*"
+mysqlclient = "*"
+django-recaptcha = "*"
+django-widget-tweaks = "*"
+gunicorn = "*"
+django-heroku = "*"
+django-crispy-forms = "*"
+
+[dev-packages]
+
+[requires]
+python_version = "3.9"
